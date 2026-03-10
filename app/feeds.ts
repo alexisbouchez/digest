@@ -15,4 +15,9 @@ export const feeds: FeedSource[] = [
     url: "https://railway.com",
     rss: "https://blog.railway.com/rss.xml",
   },
+  {
+    name: "Sentry",
+    url: "https://blog.sentry.io",
+    rss: "https://blog.sentry.io/feed.xml",
+  },
 ];
