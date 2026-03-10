@@ -25,4 +25,9 @@ export const feeds: FeedSource[] = [
     url: "https://canny.io/blog",
     rss: "https://canny.io/blog/feed/",
   },
+  {
+    name: "Fly.io",
+    url: "https://fly.io/blog",
+    rss: "https://fly.io/blog/feed.xml",
+  },
 ];

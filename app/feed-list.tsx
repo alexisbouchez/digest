@@ -44,34 +44,25 @@ export function FeedList({
         }}
       />
 
-      <p style={{ lineHeight: 2 }}>
+      <div className="filter-bar">
         <button
           onClick={() => setActiveSource(null)}
-          style={{
-            fontFamily: "inherit",
-            fontSize: "inherit",
-            cursor: "pointer",
-          }}
+          className={`filter-btn${activeSource === null ? " active" : ""}`}
         >
-          {activeSource === null ? <b>All</b> : "All"}
-        </button>{" "}
+          All
+        </button>
         {sources.map((source) => (
-          <span key={source}>
-            <button
-              onClick={() =>
-                setActiveSource(activeSource === source ? null : source)
-              }
-              style={{
-                fontFamily: "inherit",
-                fontSize: "inherit",
-                cursor: "pointer",
-              }}
-            >
-              {activeSource === source ? <b>{source}</b> : source}
-            </button>{" "}
-          </span>
+          <button
+            key={source}
+            onClick={() =>
+              setActiveSource(activeSource === source ? null : source)
+            }
+            className={`filter-btn${activeSource === source ? " active" : ""}`}
+          >
+            {source}
+          </button>
         ))}
-      </p>
+      </div>
 
       <div className="entry-list">
         {filtered.map((item, i) => (

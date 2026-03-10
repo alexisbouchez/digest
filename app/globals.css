@@ -109,6 +109,39 @@ hr.thick {
   color: var(--link);
 }
 
+/* Filter bar */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.filter-btn {
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  background: var(--background);
+  color: var(--muted);
+  transition: all 0.1s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--foreground);
+  color: var(--foreground);
+}
+
+.filter-btn.active {
+  background: var(--foreground);
+  color: var(--background);
+  border-color: var(--foreground);
+}
+
 /* Labels */
 .label {
   text-transform: uppercase;
