@@ -10,4 +10,9 @@ export const feeds: FeedSource[] = [
     url: "https://depot.dev",
     rss: "https://depot.dev/rss.xml",
   },
+  {
+    name: "Railway",
+    url: "https://railway.com",
+    rss: "https://blog.railway.com/rss.xml",
+  },
 ];
