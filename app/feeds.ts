@@ -20,4 +20,9 @@ export const feeds: FeedSource[] = [
     url: "https://blog.sentry.io",
     rss: "https://blog.sentry.io/feed.xml",
   },
+  {
+    name: "Canny",
+    url: "https://canny.io/blog",
+    rss: "https://canny.io/blog/feed/",
+  },
 ];
