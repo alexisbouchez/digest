@@ -18,37 +18,60 @@ export function FeedList({
   sources: string[];
 }) {
   const [activeSource, setActiveSource] = useState<string | null>(null);
+  const [search, setSearch] = useState("");
 
-  const filtered = activeSource
-    ? items.filter((item) => item.source === activeSource)
-    : items;
+  const filtered = items.filter((item) => {
+    if (activeSource && item.source !== activeSource) return false;
+    if (search && !item.title.toLowerCase().includes(search.toLowerCase()))
+      return false;
+    return true;
+  });
 
   return (
     <>
-      <div className="flex flex-wrap gap-2 mb-4">
+      <input
+        type="search"
+        placeholder="Search entries..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        style={{
+          width: "100%",
+          maxWidth: 400,
+          padding: 4,
+          marginBottom: 8,
+          fontSize: "inherit",
+          fontFamily: "inherit",
+        }}
+      />
+
+      <p style={{ lineHeight: 2 }}>
         <button
           onClick={() => setActiveSource(null)}
-          className={`filter-pill ${activeSource === null ? "active" : ""}`}
+          style={{
+            fontFamily: "inherit",
+            fontSize: "inherit",
+            cursor: "pointer",
+          }}
         >
-          All
-          <span className="pill-count">{items.length}</span>
-        </button>
-        {sources.map((source) => {
-          const count = items.filter((i) => i.source === source).length;
-          return (
+          {activeSource === null ? <b>All</b> : "All"}
+        </button>{" "}
+        {sources.map((source) => (
+          <span key={source}>
             <button
-              key={source}
               onClick={() =>
                 setActiveSource(activeSource === source ? null : source)
               }
-              className={`filter-pill ${activeSource === source ? "active" : ""}`}
+              style={{
+                fontFamily: "inherit",
+                fontSize: "inherit",
+                cursor: "pointer",
+              }}
             >
-              {source}
-              <span className="pill-count">{count}</span>
-            </button>
-          );
-        })}
-      </div>
+              {activeSource === source ? <b>{source}</b> : source}
+            </button>{" "}
+          </span>
+        ))}
+      </p>
 
       <div className="entry-list">
         {filtered.map((item, i) => (
