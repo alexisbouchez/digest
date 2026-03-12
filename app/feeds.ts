@@ -40,4 +40,9 @@ export const feeds: FeedSource[] = [
     url: "https://www.reddit.com/r/rust",
     rss: "https://www.reddit.com/r/rust/.rss",
   },
+  {
+    name: "r/ProgrammerHumor",
+    url: "https://www.reddit.com/r/ProgrammerHumor",
+    rss: "https://www.reddit.com/r/ProgrammerHumor/.rss",
+  },
 ];

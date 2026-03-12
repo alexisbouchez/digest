@@ -1,5 +1,6 @@
 import { feeds } from "./feeds";
 import { FeedList } from "./feed-list";
+import { ThemeToggle } from "./theme-toggle";
 import Parser from "rss-parser";
 
 interface FeedItem {
@@ -45,9 +46,12 @@ export default async function Home() {
   return (
     <div className="max-w-[960px] mx-auto px-4 py-8">
       <header className="mb-8">
-        <h1 className="text-lg font-semibold tracking-wide uppercase mb-1">
-          Digest
-        </h1>
+        <div className="flex items-center justify-between mb-1">
+          <h1 className="text-lg font-semibold tracking-wide uppercase">
+            Digest
+          </h1>
+          <ThemeToggle />
+        </div>
         <hr className="thick" />
         <div className="flex gap-6 mt-2">
           <span className="label">RSS Feed Reader</span>
