@@ -1,22 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #111111;
-  --border: #d4d4d4;
-  --border-light: #e8e8e8;
-  --muted: #737373;
-  --accent: #000000;
-  --link: #2563eb;
+  --bg: #0a0a0a;
+  --text: #e0e0e0;
+  --text-muted: #666;
+  --text-faint: #555;
+  --text-faintest: #444;
+  --accent: #7aa2f7;
+  --accent-hover: #9bb8ff;
+  --border: #222;
+  --border-subtle: #151515;
+  --border-entry: #1a1a1a;
+  --surface: #111;
+  --row-hover: #111;
+  --th-border: #333;
+  --btn-text: #0a0a0a;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-border: var(--border);
-  --color-border-light: var(--border-light);
-  --color-muted: var(--muted);
+  --color-bg: var(--bg);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
   --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-surface: var(--surface);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -25,15 +32,15 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--bg);
+  color: var(--text);
   font-family: var(--font-geist-mono), ui-monospace, monospace;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.6;
 }
 
 a {
-  color: var(--link);
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -48,7 +55,7 @@ hr {
 }
 
 hr.thick {
-  border-top: 2px solid var(--foreground);
+  border-top: 2px solid var(--text);
 }
 
 /* Entry list */
@@ -61,19 +68,19 @@ hr.thick {
   display: flex;
   align-items: baseline;
   gap: 16px;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--border-light);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-subtle);
   text-decoration: none;
-  color: var(--foreground);
+  color: var(--text);
   transition: background 0.1s ease;
 }
 
 .entry:first-child {
-  border-top: 1px solid var(--foreground);
+  border-top: 1px solid var(--th-border);
 }
 
 .entry:hover {
-  background: #fafafa;
+  background: var(--row-hover);
 }
 
 .entry:hover .entry-title {
@@ -89,24 +96,24 @@ hr.thick {
 .entry-date {
   font-size: 12px;
   font-weight: 400;
-  color: var(--muted);
+  color: var(--text-faint);
   font-variant-numeric: tabular-nums;
   width: 90px;
 }
 
 .entry-source {
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--muted);
+  color: var(--text-muted);
   width: 80px;
 }
 
 .entry-title {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--link);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--accent);
 }
 
 /* Filter bar */
@@ -114,40 +121,38 @@ hr.thick {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
 .filter-btn {
   font-family: inherit;
-  font-size: 11px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  font-size: 12px;
+  font-weight: 400;
   cursor: pointer;
-  padding: 4px 10px;
+  padding: 4px 12px;
   border: 1px solid var(--border);
-  background: var(--background);
-  color: var(--muted);
+  background: var(--surface);
+  color: var(--text-muted);
   transition: all 0.1s ease;
 }
 
 .filter-btn:hover {
-  border-color: var(--foreground);
-  color: var(--foreground);
+  border-color: var(--accent);
+  color: var(--text);
 }
 
 .filter-btn.active {
-  background: var(--foreground);
-  color: var(--background);
-  border-color: var(--foreground);
+  background: var(--accent);
+  color: var(--btn-text);
+  border-color: var(--accent);
 }
 
 /* Labels */
 .label {
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.05em;
-  color: var(--muted);
+  color: var(--text-muted);
   font-weight: 400;
 }
 
@@ -159,23 +164,23 @@ table {
 
 th {
   text-align: left;
-  font-weight: 500;
+  font-weight: 400;
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.05em;
-  color: var(--muted);
-  padding: 6px 12px 6px 0;
-  border-bottom: 1px solid var(--foreground);
+  color: var(--text-muted);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--th-border);
   white-space: nowrap;
 }
 
 td {
-  padding: 8px 12px 8px 0;
-  border-bottom: 1px solid var(--border-light);
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-subtle);
   vertical-align: top;
   font-weight: 400;
 }
 
 tr:hover td {
-  background: #fafafa;
+  background: var(--row-hover);
 }

@@ -37,10 +37,13 @@ export function FeedList({
         style={{
           width: "100%",
           maxWidth: 400,
-          padding: 4,
+          padding: "4px 10px",
           marginBottom: 8,
           fontSize: "inherit",
           fontFamily: "inherit",
+          background: "var(--surface)",
+          color: "var(--text)",
+          border: "1px solid var(--border)",
         }}
       />
 
@@ -83,7 +86,7 @@ export function FeedList({
       </div>
 
       {filtered.length === 0 && (
-        <p className="text-[var(--muted)] mt-4">No entries found.</p>
+        <p className="text-[var(--text-faintest)] mt-4">No entries found.</p>
       )}
     </>
   );

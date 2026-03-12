@@ -97,7 +97,7 @@ export default async function Home() {
         <FeedList items={items} sources={sources} />
       </section>
 
-      <footer className="mt-10 pt-3 border-t border-[var(--border)]">
+      <footer className="mt-10 pt-3" style={{ borderTop: "1px solid var(--border)" }}>
         <div className="flex items-center justify-between">
           <small className="label">Digest v0.1.0</small>
           <small className="label">Dynamic</small>
