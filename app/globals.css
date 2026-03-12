@@ -124,13 +124,14 @@ hr.thick {
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--text-muted);
-  width: 80px;
+  min-width: 140px;
 }
 
 .entry-title {
   font-size: 14px;
   font-weight: 400;
   color: var(--accent);
+  min-width: 0;
 }
 
 /* Filter bar */
