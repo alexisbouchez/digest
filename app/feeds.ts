@@ -30,4 +30,9 @@ export const feeds: FeedSource[] = [
     url: "https://fly.io/blog",
     rss: "https://fly.io/blog/feed.xml",
   },
+  {
+    name: "r/golang",
+    url: "https://www.reddit.com/r/golang",
+    rss: "https://www.reddit.com/r/golang/.rss",
+  },
 ];
