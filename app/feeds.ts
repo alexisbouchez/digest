@@ -35,4 +35,9 @@ export const feeds: FeedSource[] = [
     url: "https://www.reddit.com/r/golang",
     rss: "https://www.reddit.com/r/golang/.rss",
   },
+  {
+    name: "r/rust",
+    url: "https://www.reddit.com/r/rust",
+    rss: "https://www.reddit.com/r/rust/.rss",
+  },
 ];
